@@ -32,6 +32,6 @@
          	![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
           	![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
            	![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)
-![Postman](https://img.shields.io/badge/Apostrophe-6236FF.svg?style=for-the-badge&amp;logo=Apostrophe&amp;logoColor=white](https://img.shields.io/badge/Postman-FF6C37.svg?style=for-the-badge&amp;logo=Postman&amp;logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37.svg?style=for-the-badge&amp;logo=Postman&amp;logoColor=white)
 ![AzureDevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7.svg?style=for-the-badge&amp;logo=Azure-DevOps&amp;logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800.svg?style=for-the-badge&amp;logo=Grafana&amp;logoColor=white)
