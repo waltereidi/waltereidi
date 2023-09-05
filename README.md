@@ -35,3 +35,4 @@
 ![Postman](https://img.shields.io/badge/Postman-FF6C37.svg?style=for-the-badge&amp;logo=Postman&amp;logoColor=white)
 ![AzureDevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7.svg?style=for-the-badge&amp;logo=Azure-DevOps&amp;logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800.svg?style=for-the-badge&amp;logo=Grafana&amp;logoColor=white)
+![Xampp](https://img.shields.io/badge/XAMPP-FB7A24.svg?style=for-the-badge&logo=XAMPP&logoColor=white)
