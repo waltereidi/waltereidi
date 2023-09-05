@@ -36,3 +36,15 @@
 ![AzureDevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7.svg?style=for-the-badge&amp;logo=Azure-DevOps&amp;logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800.svg?style=for-the-badge&amp;logo=Grafana&amp;logoColor=white)
 ![Xampp](https://img.shields.io/badge/XAMPP-FB7A24.svg?style=for-the-badge&logo=XAMPP&logoColor=white)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![OpenVPN](https://img.shields.io/badge/OpenVPN-EA7E20.svg?style=for-the-badge&logo=OpenVPN&logoColor=white)
+![VisualStudio](https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=Visual-Studio&logoColor=white)
+![VisualStudioCode](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?style=for-the-badge&logo=Visual-Studio-Code&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white)
+![Vitest](https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white)
+![Microsoft Excel](https://img.shields.io/badge/Microsoft%20Excel-217346.svg?style=for-the-badge&logo=Microsoft-Excel&logoColor=white)
+![Microsoft Word](https://img.shields.io/badge/Microsoft%20Word-2B579A.svg?style=for-the-badge&logo=Microsoft-Word&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3.svg?style=for-the-badge&logo=Bootstrap&logoColor=white)
+
+
+
