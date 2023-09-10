@@ -48,4 +48,6 @@
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![Material Design](https://img.shields.io/badge/Material%20Design-757575.svg?style=for-the-badge&logo=Material-Design&logoColor=white)
 
+![waltereidi's Stats](https://github-readme-stats.vercel.app/api?username=waltereidi&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
+
 
