@@ -55,9 +55,7 @@
 ![Expo](https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white)
 ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
 
-<h3>home made website atual em produção : bibliotecaonline</h3>
-<a href="http://54.167.140.144:8000">Acessar biblioteca</a></br>
-<p> Host: Ubuntu 22 e banco de dados postgresql</p></br>
+<h3>home made website atual em produção : Loja</h3>
 
 [![GitHub Streak](https://streak-stats.demolab.com/?user=waltereidi&theme=dark)](https://git.io/streak-stats)
 [![Waltereidi's GitHub stats](https://github-readme-stats.vercel.app/api?username=waltereidi)](https://github.com/waltereidi/github-readme-stats)
