@@ -61,5 +61,6 @@
 
 ![waltereidi's Stats](https://github-readme-stats.vercel.app/api?username=waltereidi&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
 ![waltereidi's Streak](https://github-readme-streak-stats.herokuapp.com/?user=waltereidi&theme=vue-dark&hide_border=true)
+![waltereidi's tropys](https://github-profile-trophy.vercel.app/?username=waltereidi-ma&title=Followers)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=waltereidi&size_weight=0.5&count_weight=0.5)
 
