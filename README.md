@@ -60,7 +60,7 @@
 <h3>home made website atual em produção : Loja</h3>
 
 ![waltereidi's Stats](https://github-readme-stats.vercel.app/api?username=waltereidi&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
-[![GitHub Streak](https://streak-stats.demolab.com/?user=waltereidi&currStreakNum=2FD3EB&fire=pink&sideLabels=F00&date_format=[Y.]n.j)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=waltereidi)](https://git.io/streak-stats)
 [![trophy](https://github-profile-trophy.vercel.app/?username=waltereidi)](https://github.com/ryo-ma/github-profile-trophy)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=waltereidi&size_weight=0.5&count_weight=0.5)
 
