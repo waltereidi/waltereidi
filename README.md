@@ -66,7 +66,7 @@
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 ![Pytest](https://img.shields.io/badge/pytest-%23ffffff.svg?style=for-the-badge&logo=pytest&logoColor=2f9fe3)
 ![Symfony](https://img.shields.io/badge/symfony-%23000000.svg?style=for-the-badge&logo=symfony&logoColor=white)
-
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 <h3>home made website atual em produção : Loja</h3>
 
 [![waltereidi's Stats](https://github-readme-stats.vercel.app/api?username=waltereidi&show_icons=true&theme=radical)](https://git.io/awesome-stats-card)
