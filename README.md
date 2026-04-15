@@ -69,8 +69,6 @@
 ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 <h3>home made website atual em produção : Loja</h3>
 
-[![waltereidi's Stats](https://github-readme-stats.vercel.app/api?username=waltereidi&show_icons=true&theme=radical)](https://git.io/awesome-stats-card)
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=waltereidi)](https://git.io/streak-stats)
-[![trophy](https://github-profile-trophy.vercel.app/?username=waltereidi)](https://github.com/ryo-ma/github-profile-trophy)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=waltereidi&size_weight=0.5&count_weight=0.5) 
 
