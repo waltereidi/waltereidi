@@ -1,6 +1,6 @@
 # 👋 Olá, eu sou Walter
 
-Especialista em **Desenvolvimento Full Stack** com experiência em desenvolvimento de aplicações, APIs, bancos de dados, cloud e infraestrutura.
+Software Engineer | Backend & Distributed Systems | .NET & Go | Cloud & AI
 
 ### 🛠️ Tecnologias
 
