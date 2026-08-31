@@ -1,6 +1,6 @@
 # 👋 Olá, eu sou Walter
 
-Desenvolvedor Especialista em **Desenvolvimento Full Stack** com experiência em desenvolvimento de aplicações, APIs, bancos de dados, cloud e infraestrutura.
+Especialista em **Desenvolvimento Full Stack** com experiência em desenvolvimento de aplicações, APIs, bancos de dados, cloud e infraestrutura.
 
 ### 🛠️ Tecnologias
 
