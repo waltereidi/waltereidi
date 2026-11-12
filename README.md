@@ -1,4 +1,6 @@
-# 👋 Hi, I'm Walter
+<p align="center">
+  <img src="./starcraft2-battle.svg" alt="StarCraft II Animated Battle Banner" width="100%" />
+</p>
 
 **Software Engineer · Backend · Distributed Systems · Cloud · AI**
 
