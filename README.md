@@ -2,6 +2,8 @@
   <img src="./starcraft2-battle.svg" alt="StarCraft II Animated Battle Banner" width="100%" />
 </p>
 
+# 👋 Hi, I'm Walter
+
 **Software Engineer · Backend · Distributed Systems · Cloud · AI**
 
 Building scalable applications with **.NET & Go**.

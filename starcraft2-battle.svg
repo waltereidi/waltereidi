@@ -1,0 +1,536 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="100%" height="100%">
+  <defs>
+    <!-- Space & Planet Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060913" />
+      <stop offset="45%" stop-color="#0c1428" />
+      <stop offset="75%" stop-color="#181230" />
+      <stop offset="100%" stop-color="#091d26" />
+    </linearGradient>
+
+    <!-- Terrain Gradient -->
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a2234" />
+      <stop offset="40%" stop-color="#1f2430" />
+      <stop offset="65%" stop-color="#31173e" />
+      <stop offset="100%" stop-color="#132a3e" />
+    </linearGradient>
+
+    <!-- Zerg Creep Gradient -->
+    <radialGradient id="creepGrad" cx="55%" cy="85%" r="35%">
+      <stop offset="0%" stop-color="#6b1d7a" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#3c1147" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#1f2430" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Protoss Energy Glow -->
+    <radialGradient id="protossGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2ff" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#00a8ff" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0066ff" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Yamato Cannon Glow -->
+    <radialGradient id="yamatoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff6d6" stop-opacity="1" />
+      <stop offset="35%" stop-color="#ff8800" stop-opacity="0.85" />
+      <stop offset="75%" stop-color="#ff2200" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Zerg Acid Glow -->
+    <radialGradient id="acidGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4ff00" stop-opacity="1" />
+      <stop offset="50%" stop-color="#48ff00" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#00aa00" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Laser / Prismatic Beam Gradient -->
+    <linearGradient id="voidBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffff" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#0088ff" stop-opacity="0.9" />
+    </linearGradient>
+
+    <style>
+      .hud-text {
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-weight: bold;
+        fill: #9bd4ff;
+        font-size: 11px;
+        letter-spacing: 1px;
+      }
+      .title-text {
+        font-family: 'Segoe UI', 'Arial Black', sans-serif;
+        font-weight: 900;
+        fill: #e2f1ff;
+        letter-spacing: 2.5px;
+        font-size: 13.5px;
+      }
+
+      /* Battlecruiser Float */
+      @keyframes cruiserHover {
+        0%, 100% { transform: translate(0px, 0px); }
+        50% { transform: translate(3px, -6px); }
+      }
+      .battlecruiser {
+        animation: cruiserHover 4s ease-in-out infinite;
+      }
+
+      /* Thruster Flicker */
+      @keyframes thrusterPulse {
+        0%, 100% { opacity: 0.75; transform: scaleX(0.95); }
+        50% { opacity: 1; transform: scaleX(1.18); }
+      }
+      .thruster {
+        transform-origin: 95px 72px;
+        animation: thrusterPulse 0.25s ease-in-out infinite;
+      }
+
+      /* Yamato Cannon Charge & Blast Cycle */
+      @keyframes yamatoCharge {
+        0%, 45% { transform: scale(0.1); opacity: 0; }
+        55% { transform: scale(0.6); opacity: 0.8; }
+        70% { transform: scale(1.35); opacity: 1; }
+        75%, 100% { transform: scale(0.2); opacity: 0; }
+      }
+      .yamato-orb {
+        transform-origin: 256px 76px;
+        animation: yamatoCharge 4s ease-in-out infinite;
+      }
+
+      @keyframes yamatoBeam {
+        0%, 69% { opacity: 0; stroke-width: 1; }
+        72% { opacity: 1; stroke-width: 10; }
+        78% { opacity: 0.9; stroke-width: 6; }
+        84%, 100% { opacity: 0; stroke-width: 0; }
+      }
+      .yamato-beam {
+        animation: yamatoBeam 4s ease-out infinite;
+      }
+
+      @keyframes yamatoImpact {
+        0%, 70% { transform: scale(0.1); opacity: 0; }
+        74% { transform: scale(1.4); opacity: 1; }
+        85% { transform: scale(2.1); opacity: 0; }
+        100% { transform: scale(0.1); opacity: 0; }
+      }
+      .yamato-explosion {
+        transform-origin: 505px 142px;
+        animation: yamatoImpact 4s ease-out infinite;
+      }
+
+      /* Marine Gauss Rifle Muzzle Flash & Bullets */
+      @keyframes muzzleFlash {
+        0%, 100% { opacity: 0; transform: scale(0.5); }
+        10%, 30%, 50% { opacity: 1; transform: scale(1.15); }
+        20%, 40%, 60% { opacity: 0.1; transform: scale(0.6); }
+      }
+      .gauss-flash {
+        transform-origin: 215px 195px;
+        animation: muzzleFlash 0.8s steps(2) infinite;
+      }
+
+      @keyframes tracerFire {
+        0% { stroke-dashoffset: 60; opacity: 1; }
+        70% { stroke-dashoffset: 0; opacity: 1; }
+        100% { stroke-dashoffset: -20; opacity: 0; }
+      }
+      .gauss-tracer {
+        stroke-dasharray: 10 25;
+        animation: tracerFire 0.45s linear infinite;
+      }
+
+      /* Siege Tank Shock Cannon Recoil & Blast */
+      @keyframes tankFire {
+        0%, 82%, 100% { transform: translateX(0); }
+        85% { transform: translateX(-5px); }
+        92% { transform: translateX(0); }
+      }
+      .tank-turret {
+        animation: tankFire 3.2s ease-out infinite;
+      }
+      @keyframes tankBlast {
+        0%, 82%, 95%, 100% { opacity: 0; transform: scale(0.3); }
+        85% { opacity: 1; transform: scale(1.3); }
+        90% { opacity: 0.6; transform: scale(1.7); }
+      }
+      .tank-muzzle {
+        transform-origin: 158px 176px;
+        animation: tankBlast 3.2s ease-out infinite;
+      }
+
+      /* Zergling Rush Bounce */
+      @keyframes zerglingRun1 {
+        0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+        25% { transform: translate(-8px, -6px) rotate(-6deg); }
+        50% { transform: translate(-14px, 0px) rotate(3deg); }
+        75% { transform: translate(-6px, -4px) rotate(-4deg); }
+      }
+      .zergling-1 {
+        animation: zerglingRun1 0.75s ease-in-out infinite;
+      }
+      .zergling-2 {
+        animation: zerglingRun1 0.68s ease-in-out infinite 0.25s;
+      }
+
+      /* Mutalisk Flight & Wing Flap */
+      @keyframes mutaHover {
+        0%, 100% { transform: translate(0px, 0px); }
+        50% { transform: translate(-8px, -10px); }
+      }
+      .mutalisk {
+        animation: mutaHover 2.2s ease-in-out infinite;
+      }
+      @keyframes wingFlap {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(0.55); }
+      }
+      .muta-wings {
+        transform-origin: 505px 128px;
+        animation: wingFlap 0.35s ease-in-out infinite;
+      }
+
+      /* Hydralisk Acid Spit */
+      @keyframes acidSpit {
+        0% { transform: translate(0px, 0px) scale(0.6); opacity: 0; }
+        15% { opacity: 1; transform: translate(-25px, -4px) scale(1); }
+        85% { opacity: 1; transform: translate(-195px, -12px) scale(1.1); }
+        100% { opacity: 0; transform: translate(-215px, -14px) scale(1.5); }
+      }
+      .acid-projectile {
+        animation: acidSpit 1.4s linear infinite;
+      }
+
+      /* Protoss Pylon Energy Pulse & Warp Field */
+      @keyframes pylonFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+      }
+      .pylon-crystal {
+        animation: pylonFloat 2.8s ease-in-out infinite;
+      }
+
+      @keyframes psionicRing {
+        0% { transform: scale(0.5); opacity: 0.85; }
+        100% { transform: scale(1.65); opacity: 0; }
+      }
+      .psi-ring-1 {
+        transform-origin: 795px 195px;
+        animation: psionicRing 2.6s ease-out infinite;
+      }
+      .psi-ring-2 {
+        transform-origin: 795px 195px;
+        animation: psionicRing 2.6s ease-out infinite 1.3s;
+      }
+
+      /* Protoss Void Ray Prismatic Beam */
+      @keyframes voidHover {
+        0%, 100% { transform: translate(0px, 0px); }
+        50% { transform: translate(-4px, 6px); }
+      }
+      .void-ray {
+        animation: voidHover 3.4s ease-in-out infinite;
+      }
+
+      @keyframes prismaticPulse {
+        0%, 100% { stroke-width: 3; opacity: 0.75; }
+        50% { stroke-width: 7; opacity: 1; }
+      }
+      .prismatic-beam {
+        animation: prismaticPulse 0.6s ease-in-out infinite;
+      }
+
+      /* Protoss Zealot Psi-Blades Flicker */
+      @keyframes psiBlade {
+        0%, 100% { opacity: 0.85; transform: scaleX(1); }
+        50% { opacity: 1; transform: scaleX(1.14); }
+      }
+      .psi-blade {
+        transform-origin: 650px 198px;
+        animation: psiBlade 0.2s ease-in-out infinite;
+      }
+
+      /* Star Twinkle */
+      @keyframes starTwinkle {
+        0%, 100% { opacity: 0.25; }
+        50% { opacity: 1; }
+      }
+      .star-1 { animation: starTwinkle 2.5s infinite; }
+      .star-2 { animation: starTwinkle 3.2s infinite 1s; }
+      .star-3 { animation: starTwinkle 1.9s infinite 0.5s; }
+
+      /* Radar Dot Pulse */
+      @keyframes radarBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.25; }
+      }
+      .radar-dot {
+        animation: radarBlink 0.9s infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- 1. BACKGROUND SKY & KOPRULU SECTOR NEBULA -->
+  <rect width="900" height="280" rx="10" fill="url(#skyGrad)" />
+
+  <!-- Distant Planet / Moon (Char / Shakuras) -->
+  <circle cx="710" cy="68" r="36" fill="#162844" opacity="0.6" />
+  <path d="M 685,43 A 36,36 0 0,1 740,88 A 32,34 0 0,0 685,43 Z" fill="#3a6ea5" opacity="0.35" />
+
+  <!-- Starfield -->
+  <g fill="#ffffff">
+    <circle class="star-1" cx="60" cy="40" r="1.2" />
+    <circle class="star-2" cx="145" cy="28" r="1.5" />
+    <circle class="star-3" cx="290" cy="42" r="1" />
+    <circle class="star-1" cx="380" cy="24" r="1.4" />
+    <circle class="star-2" cx="465" cy="52" r="1.1" />
+    <circle class="star-3" cx="555" cy="30" r="1.6" />
+    <circle class="star-1" cx="635" cy="45" r="1" />
+    <circle class="star-2" cx="830" cy="36" r="1.4" />
+    <circle class="star-3" cx="775" cy="22" r="1.1" />
+  </g>
+
+  <!-- Distant Mountain Silhouette -->
+  <polygon points="0,210 90,175 170,195 270,165 360,202 470,180 590,198 690,168 810,192 900,175 900,240 0,240" fill="#0d1424" opacity="0.85" />
+
+  <!-- Battlefield Ground -->
+  <path d="M 0,208 Q 180,196 340,210 T 680,205 L 900,212 L 900,280 L 0,280 Z" fill="url(#groundGrad)" />
+
+  <!-- Zerg Creep Ground Spread (Center-Mid) -->
+  <ellipse cx="475" cy="222" rx="165" ry="26" fill="url(#creepGrad)" />
+  <!-- Creep Tumor Pulsing -->
+  <ellipse cx="485" cy="220" rx="14" ry="6" fill="#461257" />
+  <circle class="radar-dot" cx="485" cy="218" r="4.5" fill="#d946ef" />
+  <circle cx="462" cy="225" r="2.5" fill="#a855f7" opacity="0.8" />
+  <circle cx="512" cy="223" r="3" fill="#a855f7" opacity="0.7" />
+
+  <!-- ========================================================= -->
+  <!-- 2. TERRAN FORCES (LEFT SIDE)                              -->
+  <!-- ========================================================= -->
+
+  <!-- TERRAN BATTLECRUISER (Behemoth/Minotaur Class) -->
+  <g class="battlecruiser">
+    <!-- Engine Thruster Plumes -->
+    <g class="thruster">
+      <polygon points="95,64 55,58 68,68 48,72 68,76 55,84 95,78" fill="#00b4ff" opacity="0.85" />
+      <polygon points="95,67 68,64 76,72 68,79 95,75" fill="#ffffff" />
+    </g>
+
+    <!-- Main Hull Rear & Wings -->
+    <polygon points="92,58 148,50 165,64 165,82 148,92 92,84" fill="#2c3a4f" stroke="#526b8c" stroke-width="1.2" />
+    <!-- Upper Command Bridge Tower -->
+    <polygon points="118,50 142,38 156,38 160,52" fill="#3a4c66" stroke="#6482a8" stroke-width="1" />
+    <rect x="138" y="42" width="12" height="3" fill="#00e1ff" />
+    <!-- Mid Neck Section -->
+    <rect x="162" y="64" width="38" height="18" fill="#233042" stroke="#485e7a" stroke-width="1" />
+    <!-- Hammerhead Bow (Front) -->
+    <polygon points="196,52 246,56 256,68 256,82 246,92 196,94 188,78 188,68" fill="#374863" stroke="#6482a8" stroke-width="1.3" />
+    <!-- Terran Red Squadron Stripe -->
+    <polygon points="205,58 238,60 242,67 205,67" fill="#dc2626" />
+    <polygon points="105,66 145,63 145,70 105,72" fill="#dc2626" />
+    <!-- Hull Lights -->
+    <circle cx="215" cy="75" r="2" fill="#38bdf8" />
+    <circle cx="226" cy="75" r="2" fill="#38bdf8" />
+    <circle cx="237" cy="75" r="2" fill="#38bdf8" />
+
+    <!-- Yamato Cannon Core (Front Bow Emitter) -->
+    <circle cx="254" cy="75" r="5" fill="#ff6600" />
+    <circle class="yamato-orb" cx="256" cy="76" r="18" fill="url(#yamatoGlow)" />
+  </g>
+
+  <!-- YAMATO CANNON BEAM & EXPLOSION (Hits Zerg Mutalisk Zone) -->
+  <line class="yamato-beam" x1="256" y1="74" x2="505" y2="142" stroke="#ffae00" stroke-linecap="round" />
+  <line class="yamato-beam" x1="256" y1="74" x2="505" y2="142" stroke="#ffffff" stroke-linecap="round" opacity="0.8" />
+  <circle class="yamato-explosion" cx="505" cy="142" r="28" fill="url(#yamatoGlow)" />
+
+  <!-- TERRAN SIEGE TANK (Siege Mode on Left Ridge) -->
+  <g transform="translate(0, 6)">
+    <!-- Deployed Stabilizer Outriggers & Tracks -->
+    <polygon points="62,212 135,212 142,222 55,222" fill="#2b3748" stroke="#475569" stroke-width="1.2" />
+    <rect x="48" y="218" width="18" height="6" rx="2" fill="#64748b" />
+    <rect x="130" y="218" width="18" height="6" rx="2" fill="#64748b" />
+    <!-- Tank Hull -->
+    <polygon points="72,196 124,196 132,212 64,212" fill="#3b4d63" stroke="#64748b" stroke-width="1.2" />
+    <!-- Animated Siege Turret & 180mm Shock Cannon -->
+    <g class="tank-turret">
+      <polygon points="75,180 112,178 118,196 70,196" fill="#475d78" stroke="#94a3b8" stroke-width="1" />
+      <rect x="82" y="184" width="16" height="5" fill="#dc2626" />
+      <!-- Dual Heavy Barrel -->
+      <line x1="112" y1="184" x2="156" y2="174" stroke="#64748b" stroke-width="5" stroke-linecap="round" />
+      <line x1="112" y1="188" x2="152" y2="179" stroke="#334155" stroke-width="3.5" stroke-linecap="round" />
+      <rect x="148" y="170" width="10" height="7" transform="rotate(-12 148 170)" fill="#94a3b8" />
+    </g>
+    <!-- Muzzle Blast -->
+    <circle class="tank-muzzle" cx="158" cy="176" r="14" fill="url(#yamatoGlow)" />
+  </g>
+
+  <!-- TERRAN MARINE (CMC Powered Combat Suit + C-14 Gauss Rifle) -->
+  <g>
+    <!-- Legs -->
+    <rect x="182" y="208" width="7" height="13" rx="2" fill="#2563eb" stroke="#60a5fa" stroke-width="1" />
+    <rect x="193" y="208" width="7" height="13" rx="2" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1" />
+    <!-- Torso & Oversized Pauldrons -->
+    <rect x="179" y="191" width="22" height="18" rx="4" fill="#2563eb" stroke="#93c5fd" stroke-width="1.2" />
+    <circle cx="179" cy="195" r="8" fill="#1d4ed8" stroke="#93c5fd" stroke-width="1.2" />
+    <circle cx="201" cy="195" r="7" fill="#1d4ed8" stroke="#93c5fd" stroke-width="1.2" />
+    <!-- Visor Helmet -->
+    <rect x="184" y="182" width="12" height="10" rx="4" fill="#334155" stroke="#93c5fd" stroke-width="1" />
+    <rect x="187" y="185" width="8" height="4" rx="1.5" fill="#fbbf24" />
+    <!-- C-14 Impaler Gauss Rifle -->
+    <polygon points="188,195 214,192 214,199 188,201" fill="#1e293b" stroke="#94a3b8" stroke-width="1" />
+    <!-- Muzzle Flash -->
+    <polygon class="gauss-flash" points="215,195 228,189 224,195 231,197 223,199 227,203 215,197" fill="#fde047" />
+    <!-- Gauss Bullet Tracers towards Zerglings -->
+    <line class="gauss-tracer" x1="222" y1="195" x2="385" y2="206" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round" />
+    <line class="gauss-tracer" x1="222" y1="197" x2="365" y2="214" stroke="#facc15" stroke-width="1.6" stroke-linecap="round" />
+  </g>
+
+  <!-- ========================================================= -->
+  <!-- 3. ZERG SWARM (CENTER)                                    -->
+  <!-- ========================================================= -->
+
+  <!-- ZERG MUTALISK (Air Unit in Center Sky) -->
+  <g class="mutalisk">
+    <!-- Wing Membranes (Animated) -->
+    <g class="muta-wings">
+      <path d="M 505,128 L 482,95 L 498,108 L 512,90 L 516,122 Z" fill="#9333ea" stroke="#c084fc" stroke-width="1.2" />
+      <path d="M 505,128 L 528,98 L 538,115 L 515,130 Z" fill="#7e22ce" stroke="#a855f7" stroke-width="1" />
+    </g>
+    <!-- Mutalisk Segmented Body & Tail -->
+    <path d="M 490,128 Q 505,120 520,132 Q 534,145 525,158 Q 518,150 512,142 Z" fill="#6b21a8" stroke="#d8b4fe" stroke-width="1.2" />
+    <!-- Head & Glowing Eyes -->
+    <circle cx="492" cy="128" r="5" fill="#581c87" />
+    <circle cx="489" cy="127" r="2" fill="#bef264" />
+    <!-- Glaive Wurm Spore -->
+    <circle cx="478" cy="130" r="3.5" fill="#a3e635" />
+  </g>
+
+  <!-- ZERGLINGS (Rushing Left toward Terran Marine) -->
+  <g class="zergling-1">
+    <path d="M 388,205 L 372,194 L 376,204" fill="none" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" />
+    <ellipse cx="394" cy="211" rx="12" ry="7" fill="#7e22ce" stroke="#c084fc" stroke-width="1.2" />
+    <polygon points="392,205 404,195 401,206" fill="#a855f7" />
+    <polygon points="397,206 410,198 405,208" fill="#9333ea" />
+    <circle cx="383" cy="209" r="5" fill="#581c87" />
+    <circle cx="381" cy="208" r="1.8" fill="#facc15" />
+    <path d="M 388,217 L 383,224 M 396,217 L 394,225 M 403,216 L 408,224" stroke="#a855f7" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <g class="zergling-2" transform="translate(38, 6) scale(0.92)">
+    <path d="M 388,205 L 372,194 L 376,204" fill="none" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round" />
+    <ellipse cx="394" cy="211" rx="12" ry="7" fill="#6b21a8" stroke="#c084fc" stroke-width="1.2" />
+    <polygon points="392,205 404,195 401,206" fill="#a855f7" />
+    <circle cx="383" cy="209" r="5" fill="#581c87" />
+    <circle cx="381" cy="208" r="1.8" fill="#facc15" />
+    <path d="M 388,217 L 383,224 M 396,217 L 394,225 M 403,216 L 408,224" stroke="#a855f7" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- ZERG HYDRALISK (Center-Right rearing up) -->
+  <g>
+    <path d="M 555,222 Q 535,224 530,212 Q 528,195 536,182" fill="none" stroke="#6b21a8" stroke-width="10" stroke-linecap="round" />
+    <path d="M 555,222 Q 535,224 530,212 Q 528,195 536,182" fill="none" stroke="#a855f7" stroke-width="4" stroke-dasharray="3 4" stroke-linecap="round" />
+    <polygon points="522,175 548,166 556,180 534,186" fill="#581c87" stroke="#c084fc" stroke-width="1.2" />
+    <path d="M 532,186 L 512,182 L 506,194" fill="none" stroke="#e9d5ff" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M 535,192 L 516,190 L 512,200" fill="none" stroke="#d8b4fe" stroke-width="2" stroke-linecap="round" />
+    <circle cx="528" cy="177" r="2.2" fill="#a3e635" />
+    <g class="acid-projectile">
+      <ellipse cx="510" cy="182" rx="9" ry="4" fill="url(#acidGlow)" />
+      <line x1="504" y1="182" x2="520" y2="182" stroke="#d9f99d" stroke-width="2" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- ========================================================= -->
+  <!-- 4. PROTOSS GOLDEN ARMADA (RIGHT SIDE)                     -->
+  <!-- ========================================================= -->
+
+  <!-- PROTOSS VOID RAY (Firing Prismatic Beam at Zerg Hydralisk) -->
+  <g class="void-ray">
+    <line class="prismatic-beam" x1="685" y1="95" x2="540" y2="176" stroke="url(#voidBeam)" stroke-linecap="round" />
+    <circle cx="540" cy="176" r="10" fill="url(#protossGlow)" />
+    <polygon points="675,92 718,74 762,80 742,95 762,106 715,108" fill="#eab308" stroke="#fef08a" stroke-width="1.3" />
+    <polygon points="692,86 735,82 745,92 735,100 692,98" fill="#ca8a04" />
+    <circle cx="684" cy="94" r="9" fill="url(#protossGlow)" />
+    <polygon points="676,94 684,88 694,94 684,100" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1" />
+  </g>
+
+  <!-- PROTOSS ZEALOT (Charging Left with Twin Psi-Blades) -->
+  <g>
+    <path d="M 652,208 L 645,222 M 664,208 L 672,222" stroke="#eab308" stroke-width="4.5" stroke-linecap="round" />
+    <polygon points="646,188 668,188 664,209 650,209" fill="#ca8a04" stroke="#fef08a" stroke-width="1.2" />
+    <polygon points="640,184 652,178 652,190" fill="#eab308" stroke="#fef08a" stroke-width="1" />
+    <polygon points="674,184 662,178 662,190" fill="#eab308" stroke="#fef08a" stroke-width="1" />
+    <circle cx="657" cy="182" r="5" fill="#1e3a8a" stroke="#eab308" stroke-width="1.2" />
+    <circle cx="655" cy="182" r="1.8" fill="#00f2ff" />
+    <g class="psi-blade">
+      <polygon points="646,196 616,190 622,197 646,200" fill="#00f2ff" stroke="#ffffff" stroke-width="1" />
+      <polygon points="668,197 688,193 684,199 668,201" fill="#00f2ff" stroke="#ffffff" stroke-width="0.8" />
+    </g>
+  </g>
+
+  <!-- PROTOSS PYLON (Khaydarin Crystal + Psionic Matrix Rings) -->
+  <g>
+    <ellipse class="psi-ring-1" cx="795" cy="212" rx="48" ry="12" fill="none" stroke="#00f2ff" stroke-width="2" />
+    <ellipse class="psi-ring-2" cx="795" cy="212" rx="48" ry="12" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+    <ellipse cx="795" cy="212" rx="55" ry="14" fill="url(#protossGlow)" opacity="0.45" />
+    <polygon points="774,214 816,214 808,204 782,204" fill="#ca8a04" stroke="#fef08a" stroke-width="1.2" />
+    <g class="pylon-crystal">
+      <circle cx="795" cy="180" r="28" fill="url(#protossGlow)" />
+      <polygon points="795,152 811,178 795,202 779,178" fill="#0284c7" stroke="#bae6fd" stroke-width="1.3" />
+      <polygon points="795,152 811,178 795,184" fill="#38bdf8" />
+      <polygon points="795,152 779,178 795,184" fill="#7dd3fc" />
+      <path d="M 774,186 L 771,172 L 777,164" fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 816,186 L 819,172 L 813,164" fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- ========================================================= -->
+  <!-- 5. STARCRAFT II TACTICAL HUD OVERLAY                      -->
+  <!-- ========================================================= -->
+
+  <!-- Top Resource & Title Bar -->
+  <polygon points="0,0 900,0 900,32 875,32 860,24 620,24 605,32 295,32 280,24 40,24 25,32 0,32" fill="#070d19" opacity="0.9" stroke="#1e3a5f" stroke-width="1.5" />
+
+  <!-- Left Faction Indicators -->
+  <text x="18" y="16" class="hud-text" fill="#60a5fa">TERRAN DOMINION</text>
+  <text x="150" y="16" class="hud-text" fill="#c084fc">// ZERG SWARM</text>
+
+  <!-- Center Banner Title -->
+  <text x="450" y="21" text-anchor="middle" class="title-text">WALTER MATSUDA // KOPRULU SECTOR</text>
+
+  <!-- Right Resource Counters (Minerals, Vespene Gas, Supply) -->
+  <polygon points="650,8 656,4 662,8 659,17 653,17" fill="#38bdf8" stroke="#bae6fd" stroke-width="0.8" />
+  <text x="667" y="15" class="hud-text">2,450</text>
+
+  <rect x="725" y="5" width="11" height="12" rx="2" fill="#22c55e" stroke="#bbf7d0" stroke-width="0.8" />
+  <text x="742" y="15" class="hud-text" fill="#86efac">1,180</text>
+
+  <polygon points="805,16 811,5 817,16" fill="#facc15" />
+  <text x="822" y="15" class="hud-text" fill="#fde047">198/200</text>
+
+  <!-- Bottom Tactical Console Bar -->
+  <polygon points="0,280 0,242 185,242 200,254 700,254 715,242 900,242 900,280" fill="#070d19" opacity="0.92" stroke="#1e3a5f" stroke-width="1.5" />
+
+  <!-- Bottom Left: Minimap Radar -->
+  <rect x="14" y="246" width="54" height="29" rx="3" fill="#04101e" stroke="#38bdf8" stroke-width="1" />
+  <circle cx="25" cy="260" r="2.2" fill="#3b82f6" />
+  <circle cx="30" cy="265" r="2" fill="#3b82f6" />
+  <circle class="radar-dot" cx="42" cy="260" r="2.5" fill="#ef4444" />
+  <circle class="radar-dot" cx="46" cy="264" r="2" fill="#a855f7" />
+  <circle cx="57" cy="258" r="2.2" fill="#00f2ff" />
+  <text x="78" y="260" class="hud-text" fill="#38bdf8">RADAR: ONLINE</text>
+  <text x="78" y="272" class="hud-text" fill="#64748b">APM: 348</text>
+
+  <!-- Bottom Center: Active Engagement Status -->
+  <text x="450" y="271" text-anchor="middle" class="hud-text" fill="#7dd3fc">
+    [ BATTLECRUISER: YAMATO READY ]   •   [ SWARM DETECTED ]   •   [ EN TARO ADUN ]
+  </text>
+
+  <!-- Bottom Right: Protoss Shield & Energy Bar -->
+  <text x="730" y="259" class="hud-text" fill="#00f2ff">SHIELDS: 100%</text>
+  <rect x="730" y="264" width="150" height="6" rx="3" fill="#0f172a" stroke="#0284c7" stroke-width="0.8" />
+  <rect x="731" y="265" width="148" height="4" rx="2" fill="#00f2ff" />
+
+  <!-- Outer Frame Border -->
+  <rect width="900" height="280" rx="10" fill="none" stroke="#1e3a5f" stroke-width="2" />
+</svg>
